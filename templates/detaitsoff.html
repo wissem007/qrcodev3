@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la Licence</title>
+</head>
+<body>
+    <h2>Détails de la Licence</h2>
+
+    {% if details %}
+        <div class="detail-container">
+            <strong>Nom:</strong> {{ details[1] }}<br>
+            <strong>Prénom:</strong> {{ details[2] }}<br>
+            <strong>Alias:</strong> {{ details[3] }}<br>
+            <strong>Numéro de CIN:</strong> {{ details[4] }}<br>
+            <strong>Numéro de passeport:</strong> {{ details[5] }}<br>
+            <strong>Date de naissance:</strong> {{ details[6] }}<br>
+            <strong>Lieu de naissance:</strong> {{ details[7] }}<br>
+            <strong>Numéro d'équipe:</strong> {{ details[9] }}<br>
+            <strong>Identifiant d'intervenant d'équipe:</strong> {{ details[8] }}<br>
+            <strong>Saison d'équipe:</strong> {{ details[10] }}<br>
+            
+            {% if img_path %}
+                <strong>Photo:</strong><br>
+                <img src="{{ url_for('get_image', photo_id=details[11]) }}" alt="Photo">
+            {% else %}
+                <strong>Photo:</strong> N/A
+            {% endif %}
+        </div>
+    {% else %}
+        <p>Aucun détail trouvé pour cette licence.</p>
+    {% endif %}
+
+    <a href="/">Retour à l'accueil</a>
+</body>
+</html>

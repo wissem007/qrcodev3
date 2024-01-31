@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la Licence</title>
+</head>
+<body>
+    <h2>Détails de la Licence</h2>
+
+    {% if details %}
+        <ul>
+            {% for detail in details %}
+                <li>
+                    <strong>Name:</strong> {{ detail[0] }}<br>
+                    <strong>Last Name:</strong> {{ detail[1] }}<br>
+                    <strong>CIN Number:</strong> {% if detail[2] != 'N/A' %}{{ detail[2] }}{% else %}N/A{% endif %}<br>
+                    <strong>Passport Number:</strong> {% if detail[3] != 'N/A' %}{{ detail[3] }}{% else %}N/A{% endif %}<br>
+                    <strong>Date of Birth:</strong> {% if detail[4] != 'N/A' %}{{ detail[4] }}{% else %}N/A{% endif %}<br>
+                    <strong>Place of Birth:</strong> {% if detail[5] != 'N/A' %}{{ detail[5] }}{% else %}N/A{% endif %}
+                </li>
+                <br> <!-- Ajoutez une ligne vide entre chaque détail -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun détail trouvé pour cette licence.</p>
+    {% endif %}
+
+    <a href="/">Retour à l'accueil</a>
+</body>
+</html>

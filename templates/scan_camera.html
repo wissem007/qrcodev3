@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la Licence</title>
+</head>
+<body>
+    <h1>Détails de la Licence</h1>
+
+    {% if details %}
+        <ul>
+            {% for detail in details %}
+                <li>
+                    Name: {{ detail[0] }},
+                    Last Name: {{ detail[1] }},
+                    CIN Number: {{ detail[2] }},
+                    Passport Number: {{ detail[3] }},
+                    Date of Birth: {{ detail[4] }},
+                    Place of Birth: {{ detail[5] }}
+                </li>
+                <!-- Ajoutez d'autres champs en conséquence -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun détail trouvé pour cette licence.</p>
+    {% endif %}
+
+    <a href="/">Retour à l'accueil</a>
+</body>
+</html>

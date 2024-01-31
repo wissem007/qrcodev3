@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+</head>
+<body>
+    <h1>QR Code Scanner</h1>
+    
+    <form action="/generate_qrcode" method="POST">
+        <label for="licence_num">Numéro de licence :</label>
+        <input type="text" name="licence_num" required>
+        <button type="submit">Générer QR Code</button>
+    </form>
+
+    <hr>
+
+    <!-- <form action="/scan_qrcode" method="POST" enctype="multipart/form-data">
+        <label for="image_path">Sélectionner une image contenant un QR Code :</label>
+        <input type="file" name="image_path" accept="image/*" required>
+        <button type="submit">Scanner QR Code</button>
+    </form> -->
+    <form action="{{ url_for('scan_qrcode') }}" method="post" enctype="multipart/form-data">
+        <label for="image">Sélectionner une image contenant un QR code :</label>
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Scanner le QR code</button>
+    </form>
+    
+</body>
+</html>

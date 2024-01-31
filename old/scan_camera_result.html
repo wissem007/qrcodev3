@@ -1,0 +1,37 @@
+<!-- templates/scan_camera_result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats du Scan QR Code</title>
+</head>
+<body>
+    <h2>Résultats du Scan QR Code</h2>
+
+    {% if qr_data %}
+        <p>QR Code détecté : {{ qr_data }}</p>
+        {% if details %}
+            <ul>
+                {% for detail in details %}
+                    <li>
+                        Name: {{ detail[0] }},
+                        Last Name: {{ detail[1] }},
+                        CIN Number: {{ detail[2] }},
+                        Passport Number: {{ detail[3] }},
+                        Date of Birth: {{ detail[4] }},
+                        Place of Birth: {{ detail[5] }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun détail trouvé pour cette licence.</p>
+        {% endif %}
+    {% else %}
+        <p>Aucun QR Code détecté.</p>
+    {% endif %}
+
+    <a href="/">Retour à l'accueil</a>
+</body>
+</html>

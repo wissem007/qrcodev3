@@ -1,0 +1,18 @@
+----------------Créer un environnement virtuel---------
+python -m venv venv
+--------------apres nstaller les dépendances---------- 
+pip install -r requirements.txt
+--------------------Flask : Si Flask n'est pas installé, vous pouvez l'installer avec la commande suivante :
+pip install Flask
+
+----------------qrcode : Assurez-vous que qrcode est également installé :
+
+pip install qrcode[pil]
+
+-----------------------------------------------
+
+pyzbar : Vous devez installer pyzbar. Cependant, il peut y avoir des problèmes d'installation en fonction de votre environnement. Vous pouvez essayer d'installer la version spécifique de pyzbar qui est compatible avec votre système :
+
+
+---------------------------
+pip install pyzbar==0.1.9
